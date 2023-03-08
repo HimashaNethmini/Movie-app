@@ -87,4 +87,4 @@ const getDetail = async (req, res) => {
   }
 };
 
-export  { getList, getGenres, search, getDetail };
+export default { getList, getGenres, search, getDetail };
