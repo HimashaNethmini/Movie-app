@@ -46,7 +46,7 @@ const userApi = {
         { password, newPassword, confirmNewPassword }
       );
 
-      return { response };
+      return {response};
     } catch (err) { return { err }; }
   }
 };
