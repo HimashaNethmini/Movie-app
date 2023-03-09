@@ -17,7 +17,7 @@ const addFavourite = async (req, res) => {
 
     await favourite.save();
 
-    responseHandler.created(res, favorite);
+    responseHandler.created(res, favourite);
   } catch {
     responseHandler.error(res);
   }
