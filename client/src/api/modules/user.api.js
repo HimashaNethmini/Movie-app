@@ -5,9 +5,8 @@ const userEndpoints = {
   signin: "user/signin",
   signup: "user/signup",
   getInfo: "user/info",
-  passwordUpdate: "user/update-password",
-  getFavourites: "user/favourites",
-  addFavourite: "user/favourites"
+  passwordUpdate: "user/update-password"
+
 };
 
 const userApi = {
@@ -42,11 +41,11 @@ const userApi = {
   passwordUpdate: async ({ password, newPassword, confirmNewPassword }) => {
     try {
       const response = await privateClient.put(
-        userEndpoints.passwordUpdate,
+        userEndpoints.signup,
         { password, newPassword, confirmNewPassword }
       );
 
-      return {response};
+      return { response };
     } catch (err) { return { err }; }
   }
 };
