@@ -1,5 +1,5 @@
 import { Drawer, List, ListItemButton,ListItemIcon, ListItemText, Stack, Toolbar, Typography } from "@mui/material";
-import { useDispatc, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import menuConfigs from "../../configs/menu.configs";
 import Logo from "./Logo";
