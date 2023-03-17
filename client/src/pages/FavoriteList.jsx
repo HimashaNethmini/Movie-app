@@ -6,11 +6,11 @@ import { toast } from "react-toastify";
 import MediaItem from "../components/common/MediaItem";
 import Container from "../components/common/Container";
 import uiConfigs from "../configs/ui.configs";
-import favouriteApi from "../api/modules/favourite.api";
+import favoriteApi from "../api/modules/favorite.api";
 import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
 import { removeFavorite } from "../redux/features/userSlice";
 
-const FavouriteItem = ({ media, onRemoved }) => {
+const FavoriteItem = ({ media, onRemoved }) => {
     const dispatch = useDispatch();
   
     const [onRequest, setOnRequest] = useState(false);
@@ -18,13 +18,13 @@ const FavouriteItem = ({ media, onRemoved }) => {
     const onRemove = async () => {
       if (onRequest) return;
       setOnRequest(true);
-      const { response, err } = await favouriteApi.remove({ favouriteId: media.id });
+      const { response, err } = await favoriteApi.remove({ favoriteId: media.id });
       setOnRequest(false);
   
       if (err) toast.error(err.message);
       if (response) {
-        toast.success("Remove favourite success");
-        dispatch(removeFavourite({ mediaId: media.mediaId }));
+        toast.success("Remove favorite success");
+        dispatch(removeFavorite({ mediaId: media.mediaId }));
         onRemoved(media.id);
       }
     };
@@ -45,7 +45,7 @@ const FavouriteItem = ({ media, onRemoved }) => {
     </>);
   };
   
-  const FavouriteList = () => {
+  const FavoriteList = () => {
     const [medias, setMedias] = useState([]);
     const [filteredMedias, setFilteredMedias] = useState([]);
     const [page, setPage] = useState(1);
@@ -56,9 +56,9 @@ const FavouriteItem = ({ media, onRemoved }) => {
     const skip = 8;
   
     useEffect(() => {
-      const getFavourites = async () => {
+      const getFavorites = async () => {
         dispatch(setGlobalLoading(true));
-        const { response, err } = await favouriteApi.getList();
+        const { response, err } = await favoriteApi.getList();
         dispatch(setGlobalLoading(false));
   
         if (err) toast.error(err.message);
@@ -69,7 +69,7 @@ const FavouriteItem = ({ media, onRemoved }) => {
         }
       };
   
-      getFavourites();
+      getFavorites();
     }, []);
   
     const onLoadMore = () => {
@@ -102,4 +102,4 @@ const FavouriteItem = ({ media, onRemoved }) => {
     );
   };
   
-  export default FavouriteList;
+  export default FavoriteList;
