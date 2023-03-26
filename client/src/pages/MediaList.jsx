@@ -13,7 +13,7 @@ import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
 import { toast } from "react-toastify";
 import usePrevious from "../hooks/usePrevious";
 
-
+const MediaList = () =>{
     const { mediaType } = useParams();
   
     const [medias, setMedias] = useState([]);
@@ -123,6 +123,7 @@ import usePrevious from "../hooks/usePrevious";
         </Box>
       </>
     );
+  };
 
   
   export default MediaList;
