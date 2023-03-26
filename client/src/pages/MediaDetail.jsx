@@ -1,35 +1,34 @@
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavouriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
+import { LoadingButton } from "@mui/lab";
+import { Box, Button, Chip, Divider, Stack, Typography } from "@mui/material";
+import { useEffect, useState, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
+import CircularRate from "../components/common/CircularRate";
+import Container from "../components/common/Container";
+import ImageHeader from "../components/common/ImageHeader";
 
+import uiConfigs from "../configs/ui.configs";
+import tmdbConfigs from "../api/configs/tmdb.configs";
+import mediaApi from "../api/modules/media.api";
+import favouriteApi from "../api/modules/favorite.api";
 
+import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
+import { setAuthModalOpen } from "../redux/features/authModalSlice";
+import { addFavorites,removeFavorites } from "../redux/features/userSlice";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import CastSlide from "../components/common/CastSlide";
+import MediaVideosSlide from "../components/common/MediaVideosSlide";
+import BackdropSlide from "../components/common/BackdropSlide";
+import PosterSlide from "../components/common/PosterSlide";
+import RecommendSlide from "../components/common/RecommendSlide";
+import MediaSlide from "../components/common/MediaSlide";
+import MediaReview from "../components/common/MediaReview";
 
 const MediaDetail = () => {
     const { mediaType, mediaId } = useParams();
