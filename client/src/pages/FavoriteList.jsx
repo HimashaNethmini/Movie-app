@@ -86,11 +86,11 @@ const FavoriteItem = ({ media, onRemoved }) => {
   
     return (
       <Box sx={{ ...uiConfigs.style.mainContent }}>
-        <Container header={`Your favourites (${count})`}>
+        <Container header={`Your favorites (${count})`}>
           <Grid container spacing={1} sx={{ marginRight: "-8px!important" }}>
             {filteredMedias.map((media, index) => (
               <Grid item xs={6} sm={4} md={3} key={index}>
-                <FavouriteItem media={media} onRemoved={onRemoved} />
+                <FavoriteItem media={media} onRemoved={onRemoved} />
               </Grid>
             ))}
           </Grid>
