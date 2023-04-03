@@ -195,7 +195,8 @@ const MediaDetail = () => {
                           "& .MuiButon-starIcon": { marginRight: "0" }
                         }}
                         size="large"
-                        startIcon={isFavourite ? <FavouriteIcon /> : <FavouriteBorderOutlinedIcon />}
+                        startIcon={isFavourite ? <FavoriteIcon /> : 
+                        <FavouriteBorderOutlinedIcon />}
                         loadingPosition="start"
                         loading={onRequest}
                         onClick={onFavouriteClick}

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthModalOpen } from "../../redux/features/authModalSlice";
 import Logo from "./Logo";
-import SigninForm from "./SiginForm";
+import SigninForm from "./SigninForm";
 import SignupForm from "./SignupForm";
 
 const actionState = {

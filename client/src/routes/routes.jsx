@@ -8,8 +8,6 @@ import PasswordUpdate from "../pages/PasswordUpdate";
 import ReviewList from "../pages/ReviewList";
 import ProtectedPage from "../components/common/ProtectedPage";
 
-
-
 export const routesGen = {
     home: "/",
     mediaList: (type) => `/${type}`,

@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { toast } from "react-toastify";
 import userApi from "../../api/modules/user.api";
 import favoriteApi from "../../api/modules/favorite.api";
-import { setListFavorites } from "../../redux/features/userSlice";
+import { setListFavorites, setUser } from "../../redux/features/userSlice";
 
 
 

@@ -9,7 +9,7 @@ import Container from "../components/common/Container";
 import uiConfigs from "../configs/ui.configs";
 import favoriteApi from "../api/modules/favorite.api";
 import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
-import { removeFavorite } from "../redux/features/userSlice";
+import { removeFavorites } from "../redux/features/userSlice";
 
 const FavoriteItem = ({ media, onRemoved }) => {
     const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const FavoriteItem = ({ media, onRemoved }) => {
       if (err) toast.error(err.message);
       if (response) {
         toast.success("Remove favorite success");
-        dispatch(removeFavorite({ mediaId: media.mediaId }));
+        dispatch(removeFavorites({ mediaId: media.mediaId }));
         onRemoved(media.id);
       }
     };
